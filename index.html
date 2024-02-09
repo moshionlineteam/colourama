@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Luckiest+Guy" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla:400,700" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.5.1/jscolor.min.js" integrity="sha512-/e+XGe8oSD9M1t0NKNCrUlRsiyeFTiZw4+pmf0g8wTbc8IfiLwJsjTODc/pq3hKhKAdsehJs7STPvX7SkFSpOQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <title>Moshi Online | Ruffle Demo</title>
+    <style>
+        #monster {
+            margin:0 auto;
+            display: none;
+        }
+
+        .esearch-loader {
+            display: none;
+            font-size: 25px;
+            position: absolute;
+            margin-left: -25px;
+        }
+
+        .coloramaOptions {
+            display: none;
+        }
+
+        .logo {
+            width: 50px;
+        }
+h1 {
+    font-weight: bold;
+    font-family: "Luckiest Guy", Arial, sans-serif;
+    color: white;
+}
+
+h2 {
+    color: #000000;
+    font-family: "Luckiest Guy", Arial, sans-serif;
+
+}
+
+p {
+    font-family: "Karla", sans-serif;
+
+}
+    </style>
+</head>
+
+<body>
+
+    <section class="colorama" data-aos="fade-left">
+        <div class="container py-5">
+            <h2><a href="https://moshionline.net"><img src="./logo.png" class="logo"></a> <img src="./ruffle-logo.png" class="logo"></h2>
+            <p class="text-secondary">With this ruffle demo application, you can play around with different monsters and color combinations!</p>
+            <hr>
+
+            <div: id="monster" class="align-items-center justify-content-center"></div:>
+
+
+            <div class="row mb-2">
+                <div class="col-lg-6">
+                    <label for="monster">Monster</label>
+                    <select name="monster" id="monsterselect" class="form-control">
+                        <option value="" disabled selected>Select a monster</option>
+                        <option value="furi">Furi</option>
+                        <option value="luvli">Luvli</option>
+                        <option value="zommer">Zommer</option>
+                        <option value="katsuma">Katsuma</option>
+                        <option value="diavlo">Diavlo</option>
+                        <option value="poppet">Poppet</option>
+                    </select>
+                </div>
+                <div class="col-lg-6">
+                <form class="form-horizontal" method="" id="eSearchForm">
+                <p class="esearch-loader"><span class="spinner-border spinner-border-sm"></span></p>
+                    <label for="player">Get Player's Monster</label>
+                    <input class="form-control" type="text" id="player" placeholder="Enter a username"/>
+                </div></form>
+
+            </div>
+
+            <div class="coloramaOptions">
+            <br>
+            <hr>
+            <br>
+            <div class="row mb-2">
+                <div class="col-lg-6">
+                    <label for="primary">Select primary Color</label>
+                    <select name="primary" id="primary" class="form-control">
+                        <option value="0" selected>Color 1</option>
+                        <option value="1">Color 2</option>
+                        <option value="2">Color 3</option>
+                        <option value="3">Color 4</option>
+                        <option value="4">Color 5</option>
+                        <option value="5">Color 6</option>
+                        <option value="6">Color 7</option>
+                        <option value="7">Color 8</option>
+                    </select>
+                </div>
+                <div class="col-lg-6">
+                    <label for="secondary">Select secondary Color</label>
+                    <select name="secondary" id="secondary" class="form-control">
+                    <option value="0" selected>Color 1</option>
+                        <option value="1">Color 2</option>
+                        <option value="2">Color 3</option>
+                        <option value="3">Color 4</option>
+                        <option value="4">Color 5</option>
+                        <option value="5">Color 6</option>
+                        <option value="6">Color 7</option>
+                        <option value="7">Color 8</option>
+                    </select>
+                </div>
+
+                <div class="col-lg-4">
+                    <label for="color1" id="col1"></label>
+                    <input data-jscolor="" id="color1" name="color1" class="form-control">
+                </div>
+
+                <div class="col-lg-4">
+                    <label for="color2" id="col2" ></label>
+                    <input data-jscolor="" id="color2" name="color2" class="form-control">
+                </div>
+
+                <div class="col-lg-4">
+                    <label for="color3" id="col3"></label>
+                    <input data-jscolor="" id="color3" name="color3" class="form-control"></input>
+                </div>
+            </div>
+            <button class="btn btn-primary" id="washbtn">Wash</button>
+
+        </div>
+    </div>
+    </section>
+
+    <section id="intro" data-aos="fade-right">
+        <div class="container py-3">
+        <h2>Ruffle Demo Instructions</h2>
+
+
+<ul class="list-group mt-4">
+  <li class="list-group-item">To start using, choose a monster from the dropdown menu or enter a username that you want get colors from.</li>
+  <li class="list-group-item">The primary and secondary colors determine what the monster looks like without custom colors. You can customize these colors by choosing from a selection of 8 different options for each color.</li>
+  <li class="list-group-item">You can also customize up to three different parts of the monster. These parts are labeled, and you can select a color for each part by clicking on the corresponding input field.</li>
+  <li class="list-group-item">To go back to the website, you can click on the 'M' logo on the top.</li>
+</ul>
+        </div>
+    </section>
+
+    <section id="info" data-aos="fade-left">
+        <div class="container py-5">
+        <h2>More information</h2>
+	<hr>
+        <p>Ruffle, a Flash emulator, functions on both client and server sides. If the parent site lacks it, you can install it as a web extension to be able to use that website. However, once this game can run on it, I'll include it natively on the server, eliminating the need for a browser extension! <a href="https://moshionline.net/blog/updates/about-playing-with-the-web-extension-ruffle">This Daily Growl post</a> was clarification for those that already have the web extension wondering why they couldn't play the game.</p>
+        <p>This demo page is a native Ruffle demo where flash objects are rendered. The best part? You can view it on any device! Pretty cool, huh? I hope that clears things up. Play with it a little bit. 😉</p>
+        <p>In short, there's no need to install anything once it's included natively!</p>
+        <p>Reference: <a href="https://moshionline.net/blog/updates/about-playing-with-the-web-extension-ruffle">here</a> and <a href="https://moshionline.net/help/troubleshooting/infinite-loading-screen">here</a>.</p>
+        </div>
+    </section>
+
+    <div class="footer justify-content-center text-center mb-5">
+<p>Moshi Monsters is a trademark of the Mind Candy company. We are not affiliated with the Mind Candy Company.</p>
+<small>MoshiOnline.net is a non-profit, completely free-to-play, with no subscriptions, donations, or any means of generating revenue.</small>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+<script>
+AOS.init();
+
+window.RufflePlayer = window.RufflePlayer || {};
+window.RufflePlayer.config = {
+"autoplay": "on",
+"menu": false,
+"contextMenu": false,
+"splashScreen": false,
+"unmuteOverlay": "hidden",
+"warnOnUnsupportedContent": false,
+"width": 300
+
+};
+const _0x488593=_0x5705;(function(_0xced589,_0xb4a96){const _0x2e36bd=_0x5705,_0x739924=_0xced589();while(!![]){try{const _0xc01c6d=parseInt(_0x2e36bd(0x1a8))/0x1*(parseInt(_0x2e36bd(0x1ad))/0x2)+parseInt(_0x2e36bd(0x18f))/0x3+parseInt(_0x2e36bd(0x19a))/0x4+-parseInt(_0x2e36bd(0x182))/0x5+parseInt(_0x2e36bd(0x16b))/0x6*(-parseInt(_0x2e36bd(0x180))/0x7)+parseInt(_0x2e36bd(0x186))/0x8*(parseInt(_0x2e36bd(0x1a4))/0x9)+-parseInt(_0x2e36bd(0x192))/0xa;if(_0xc01c6d===_0xb4a96)break;else _0x739924['push'](_0x739924['shift']());}catch(_0x1690a3){_0x739924['push'](_0x739924['shift']());}}}(_0x25ae,0x7cf24));let monster=null,primary=null,secondary=null;$(document)[_0x488593(0x18b)](function(){const _0x3fc4b0=_0x488593;$(_0x3fc4b0(0x161))[_0x3fc4b0(0x17c)](''),$('#color1')[_0x3fc4b0(0x17c)](_0x3fc4b0(0x169)),$(_0x3fc4b0(0x162))[_0x3fc4b0(0x17c)](_0x3fc4b0(0x169)),$('#color3')[_0x3fc4b0(0x17c)]('#FFFFFF'),$(_0x3fc4b0(0x166))[_0x3fc4b0(0x1a2)]('selectedIndex',0x0);}),window['addEventListener'](_0x488593(0x1b3),_0x32ded5=>{const _0x5c019a=_0x488593,_0x8c53b8=window['RufflePlayer'][_0x5c019a(0x176)](),_0xa7c437=_0x8c53b8[_0x5c019a(0x178)](),_0x51cdc6=document[_0x5c019a(0x18e)](_0x5c019a(0x1a3));_0x51cdc6[_0x5c019a(0x19f)](_0xa7c437),_0xa7c437[_0x5c019a(0x17b)]['width']=_0x5c019a(0x164),_0xa7c437[_0x5c019a(0x17b)]['height']=_0x5c019a(0x16d);let _0x3304b6={'primary':0x0,'secondary':0x0};$(_0x5c019a(0x196))['on'](_0x5c019a(0x184),function(_0x4297b5){const _0x5d4ce2=_0x5c019a;_0x4297b5[_0x5d4ce2(0x195)]();var _0x5dc3f=$(_0x5d4ce2(0x168))[_0x5d4ce2(0x17c)]();$(_0x5d4ce2(0x185))[_0x5d4ce2(0x1af)](),$[_0x5d4ce2(0x190)]({'url':'https://moshionline.met/api','data':{'monsterColours':_0x5dc3f},'method':_0x5d4ce2(0x173),'dataType':'json','success':function(_0x241e8b){const _0x41a0a2=_0x5d4ce2;$(_0x41a0a2(0x185))[_0x41a0a2(0x19d)](),console[_0x41a0a2(0x188)](_0x241e8b),!_0x241e8b[_0x41a0a2(0x199)]?Swal[_0x41a0a2(0x18c)]({'title':_0x41a0a2(0x174),'icon':_0x41a0a2(0x16c),'text':_0x41a0a2(0x19c),'allowOutsideClick':![],'allowEscapeKey':![]}):(monster=_0x241e8b[_0x41a0a2(0x191)]['type'],$(_0x41a0a2(0x187))[_0x41a0a2(0x17c)](_0x241e8b['data']['type']),_0x3304b6[_0x41a0a2(0x18a)]=_0x241e8b['data']['primarycolour'],_0x3304b6[_0x41a0a2(0x183)]=_0x241e8b[_0x41a0a2(0x191)][_0x41a0a2(0x18d)],_0x241e8b[_0x41a0a2(0x191)][_0x41a0a2(0x1a5)]&&_0x241e8b[_0x41a0a2(0x191)]['customcolour2']&&_0x241e8b[_0x41a0a2(0x191)][_0x41a0a2(0x1b2)]&&(_0x3304b6['colour1']=_0x241e8b[_0x41a0a2(0x191)]['customcolour1'],_0x3304b6[_0x41a0a2(0x16a)]=_0x241e8b[_0x41a0a2(0x191)][_0x41a0a2(0x179)],_0x3304b6['colour3']=_0x241e8b[_0x41a0a2(0x191)][_0x41a0a2(0x1b2)],$('#color1')[_0x41a0a2(0x17c)]('#'+_0x241e8b['data'][_0x41a0a2(0x1a5)]),$('#color2')['val']('#'+_0x241e8b[_0x41a0a2(0x191)]['customcolour2']),$('#color2')[_0x41a0a2(0x17c)]('#'+_0x241e8b['data'][_0x41a0a2(0x1b2)])),$(_0x41a0a2(0x1ab))['val'](_0x241e8b[_0x41a0a2(0x191)][_0x41a0a2(0x17a)]),$(_0x41a0a2(0x177))['val'](_0x241e8b[_0x41a0a2(0x191)][_0x41a0a2(0x18d)]),updatePresets(monster),loadPlayer(_0xa7c437,monster,_0x3304b6));}});}),$(_0x5c019a(0x187))['on'](_0x5c019a(0x1a0),function(){const _0x3d67c5=_0x5c019a;monster=$(this)[_0x3d67c5(0x17c)](),loadPlayer(_0xa7c437,monster,_0x3304b6),updatePresets(monster);}),$(_0x5c019a(0x1ab))['on']('change',function(){const _0x1d3a40=_0x5c019a;_0x3304b6['primary']=$(this)[_0x1d3a40(0x17c)](),loadPlayer(_0xa7c437,monster,_0x3304b6);}),$('#secondary')['on'](_0x5c019a(0x1a0),function(){const _0x199006=_0x5c019a;_0x3304b6[_0x199006(0x183)]=$(this)[_0x199006(0x17c)](),loadPlayer(_0xa7c437,monster,_0x3304b6);}),$(_0x5c019a(0x19b))['on'](_0x5c019a(0x1a0),function(){const _0x6e620=_0x5c019a;!_0x3304b6[_0x6e620(0x16a)]&&!_0x3304b6[_0x6e620(0x1aa)]&&(_0x3304b6[_0x6e620(0x16a)]=_0x6e620(0x172),_0x3304b6[_0x6e620(0x1aa)]=_0x6e620(0x172)),_0x3304b6[_0x6e620(0x1ae)]=$(this)[_0x6e620(0x17c)]()[_0x6e620(0x1a9)]('#',''),loadPlayer(_0xa7c437,monster,_0x3304b6);}),$('#color2')['on']('change',function(){const _0x173dc8=_0x5c019a;!_0x3304b6[_0x173dc8(0x1ae)]&&!_0x3304b6['colour3']&&(_0x3304b6[_0x173dc8(0x1ae)]=_0x173dc8(0x172),_0x3304b6[_0x173dc8(0x1aa)]=_0x173dc8(0x172)),_0x3304b6[_0x173dc8(0x16a)]=$(this)[_0x173dc8(0x17c)]()[_0x173dc8(0x1a9)]('#',''),loadPlayer(_0xa7c437,monster,_0x3304b6);}),$(_0x5c019a(0x165))['on'](_0x5c019a(0x1a0),function(){const _0xb5bff3=_0x5c019a;!_0x3304b6[_0xb5bff3(0x1ae)]&&!_0x3304b6[_0xb5bff3(0x16a)]&&(_0x3304b6[_0xb5bff3(0x1ae)]=_0xb5bff3(0x172),_0x3304b6[_0xb5bff3(0x16a)]='FFFFFF'),_0x3304b6[_0xb5bff3(0x1aa)]=$(this)[_0xb5bff3(0x17c)]()[_0xb5bff3(0x1a9)]('#',''),loadPlayer(_0xa7c437,monster,_0x3304b6);}),$(_0x5c019a(0x194))['on']('click',function(){const _0x286da6=_0x5c019a;let _0x1542d6={'secondary':_0x3304b6[_0x286da6(0x183)],'primary':_0x3304b6[_0x286da6(0x18a)]};loadPlayer(_0xa7c437,monster,_0x1542d6);});});function loadPlayer(_0x1a1c4e,_0x275654,_0x2b7dcf){const _0x28933e=_0x488593;_0x1a1c4e['load']({'url':_0x28933e(0x1b1)+_0x275654+_0x28933e(0x181),'parameters':_0x2b7dcf,'backgroundColor':_0x28933e(0x17e)})[_0x28933e(0x170)](()=>{const _0x3e9bf7=_0x28933e;$(_0x3e9bf7(0x1a7))[_0x3e9bf7(0x160)](),$(_0x3e9bf7(0x198))[_0x3e9bf7(0x19e)](_0x3e9bf7(0x193))[_0x3e9bf7(0x1af)](),$(_0x3e9bf7(0x175))[_0x3e9bf7(0x163)](_0x3e9bf7(0x193))[_0x3e9bf7(0x19d)]();});}function _0x25ae(){const _0x5c8877=['fadeIn','input','#color2','removeClass','300px','#color3','select','Eyes','#player','#FFFFFF','colour2','498AosPQn','error','400px','text','diavlo','then','luvli','FFFFFF','GET','Uh\x20oh!','.char-loader','newest','#secondary','createPlayer','customcolour2','primarycolour','style','val','#col2','#fff','#col1','11753HbxnQz','/avatar_animated.swf','822270zMSDJS','secondary','submit','.esearch-loader','8aXkRAC','#monsterselect','log','katsuma','primary','ready','fire','secondarycolour','getElementById','1969893FxLZza','ajax','data','12294450WsXxNh','d-flex','#washbtn','preventDefault','#eSearchForm','Hair','#monster','success','2430488tJypBv','#color1','Could\x20not\x20get\x20this\x20user\x20:(','hide','addClass','appendChild','change','Tail','prop','monster','2554029ynrUUs','customcolour1','Shirt','.coloramaOptions','248501PPwpxY','replace','colour3','#primary','#col3','4xbSHxX','colour1','show','Body','https://assets01.moshionline.net/static/assets-static.version/1.7/flash/monsters/','customcolour3','load'];_0x25ae=function(){return _0x5c8877;};return _0x25ae();}function _0x5705(_0xd75fb9,_0x157a58){const _0x25ae35=_0x25ae();return _0x5705=function(_0x5705b8,_0x39585f){_0x5705b8=_0x5705b8-0x160;let _0x5705eb=_0x25ae35[_0x5705b8];return _0x5705eb;},_0x5705(_0xd75fb9,_0x157a58);}function updatePresets(_0x3168a8){const _0x18a8b7=_0x488593;if(_0x3168a8=='poppet')$(_0x18a8b7(0x1ac))[_0x18a8b7(0x16e)]('Feet'),$(_0x18a8b7(0x17d))[_0x18a8b7(0x16e)](_0x18a8b7(0x167)),$(_0x18a8b7(0x17f))[_0x18a8b7(0x16e)](_0x18a8b7(0x1b0));else{if(_0x3168a8=='zommer')$(_0x18a8b7(0x1ac))['text'](_0x18a8b7(0x1a6)),$(_0x18a8b7(0x17d))['text'](_0x18a8b7(0x197)),$(_0x18a8b7(0x17f))['text'](_0x18a8b7(0x1b0));else{if(_0x3168a8==_0x18a8b7(0x171))$(_0x18a8b7(0x1ac))['text'](_0x18a8b7(0x167)),$(_0x18a8b7(0x17d))[_0x18a8b7(0x16e)](_0x18a8b7(0x1a1)),$(_0x18a8b7(0x17f))[_0x18a8b7(0x16e)](_0x18a8b7(0x1b0));else{if(_0x3168a8==_0x18a8b7(0x189))$(_0x18a8b7(0x1ac))[_0x18a8b7(0x16e)](_0x18a8b7(0x167)),$(_0x18a8b7(0x17d))[_0x18a8b7(0x16e)]('Stripes'),$('#col1')[_0x18a8b7(0x16e)](_0x18a8b7(0x1b0));else{if(_0x3168a8==_0x18a8b7(0x16f))$('#col3')[_0x18a8b7(0x16e)](_0x18a8b7(0x167)),$(_0x18a8b7(0x17d))['text']('Face'),$(_0x18a8b7(0x17f))[_0x18a8b7(0x16e)](_0x18a8b7(0x1b0));else _0x3168a8=='furi'&&($(_0x18a8b7(0x1ac))[_0x18a8b7(0x16e)]('Feet'),$('#col2')[_0x18a8b7(0x16e)](_0x18a8b7(0x167)),$(_0x18a8b7(0x17f))[_0x18a8b7(0x16e)](_0x18a8b7(0x1b0)));}}}}}
+</script>
+
+<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+</body>
+</html>
